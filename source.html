@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple HTML Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('form').submit(function(event) {
+          event.preventDefault();
+          if ($('#textbox1').val().toLowerCase() === 'i love you my angel' && $('#textbox2').val().toLowerCase() === 'a boy and a girl' && $('#textbox3').val().toLowerCase() === 'my dear eggo') {
+            $('#hidden-div').animate({height: 'toggle'}, 2000);
+            $('#hidden-div').show();
+          } else {
+            $('input[type="text"]:invalid + span:after').show();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="textbox1">Guess what...</label>
+      <input type="text" id="textbox1" name="textbox1" required>
+      <span></span><br>
+      <label for="textbox2">What kind of cheesy...</label>
+      <input type="text" id="textbox2" name="textbox2" required>
+      <span></span><br>
+      <label for="textbox3">Your dear monki...</label>
+      <input type="text" id="textbox3" name="textbox3" required>
+      <span></span><br>
+      <input type="submit" value="Submit">
+    </form>
+    <div id="hidden-div">
+      <iframe width="1003" height="662" src="https://www.youtube.com/embed/eno5MvT9Cwo" title="secret video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <a href="https://www.youtube.com/watch?v=eno5MvT9Cwo">alternate link to reward</a>
+    </div>
+  </body>
+</html>
